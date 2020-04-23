@@ -3,12 +3,6 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /css
-  static_dir: css
-- url: /javascript
-  static_dir: javascript
-- url: /images
-  static_dir: images
 - url: /.*
   script: main.app
 
@@ -19,12 +13,3 @@ libraries:
   version: latest
 - name: ssl
   version: latest
-
-builtins:
-- deferred: on
-
-error_handlers:
-  - file: templates/error.html
-
-# env_variables:
-# - GAE_USE_SOCKETS_HTTPLIB : 'anyvalue'

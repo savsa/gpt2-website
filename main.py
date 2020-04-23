@@ -1,5 +1,8 @@
 import webapp2
 import jinja2
+import os
+import config
+
 import requests_toolbelt.adapters.appengine
 
 env = jinja2.Environment(
@@ -9,11 +12,10 @@ env = jinja2.Environment(
 
 class Home(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template('templates/search.html')
-        self.response.write(template.render(template_vars))
+        template = env.get_template('templates/home.html')
+        self.response.write(template.render())
 
 requests_toolbelt.adapters.appengine.monkeypatch()
-
 app = webapp2.WSGIApplication([
     ('/', Home),
-], debug=True, config=config_sessions)
+], debug=True)
