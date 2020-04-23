@@ -1,7 +1,6 @@
 import webapp2
 import jinja2
 import os
-import config
 
 import requests_toolbelt.adapters.appengine
 
